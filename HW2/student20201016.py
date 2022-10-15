@@ -29,19 +29,16 @@ for t in range(2,12):
 	ws.cell(row = t, column = 7, value = total_value)
 
 total.sort(reverse=True)
-print(total)
 dic = []
 
 for i in range(len(total)):
 	dic.append('Z')
 
-print(dic)
-
 Agrade = math.trunc(len(total)*0.3)
 Bgrade = math.trunc(len(total)*0.7)
 Cgrade = len(total)-Bgrade
 
-for index in range(0,len(total)):
+for index in range(len(total)):
 	if(index < Agrade):
 		if(index < Agrade//2):
 			dic[index] = 'A+'
@@ -75,7 +72,7 @@ for index in range(0,len(total)):
 			for i in range(len(total)):
 				if(total[index] == total[i]):
 					dic[i] = dic[index]
-print(dic)
+
 for g in range(2,12):
 	count = -1
 	for t in total:
