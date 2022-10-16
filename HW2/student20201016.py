@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-from openpyxl import Workbook
+from openpyxl import load_workbook
 import math
-
-wb = Workbook()
-
+wb = load_workbook(filename = 'student.xlsx')
 ws = wb.active
 
 row_max = ws.max_row
-
 total=[]
+
 for t in range(2, row_max+1):
 	#total
 	midtern = ws.cell(row = t, column = 3).value * 0.3
