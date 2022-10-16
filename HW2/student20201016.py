@@ -6,16 +6,6 @@ wb = Workbook()
 
 ws = wb.active
 ws.append(['id', 'name', 'midtern', 'final' , 'homework', 'attendance', 'total', 'grade'])
-ws.append([20140001, 'Sophia', 23, 53, 41, 1])
-ws.append([20140002, 'Emily', 94, 36, 33, 1])
-ws.append([20140003, 'Lily', 37, 20, 46, 1])
-ws.append([20140004, 'Olivia', 73, 100, 72, 1])
-ws.append([20140005, 'Amelia', 93, 46, 0, 1])
-ws.append([20150001, 'Isla', 6, 30, 58, 1])
-ws.append([20150003, 'Isabella', 71, 51, 54, 1])
-ws.append([20150005, 'Ava', 43, 62, 56, 1])
-ws.append([20150007, 'Sophie', 48, 92, 14, 1])
-ws.append([20150009, 'Chloe', 91, 64, 39, 1])
 
 total=[]
 for t in range(2,12):
