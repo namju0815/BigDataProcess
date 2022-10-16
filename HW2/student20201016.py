@@ -36,21 +36,20 @@ for i in range(len(total)):
 	
 Agrade = math.trunc(len(total)*0.3)
 Bgrade = math.trunc(len(total)*0.7)
-Cgrade = math.trunc(len(total)-Bgrade)
 
 for index in range(len(total)):
 	if(index < Agrade):
-		dic[index] = 'A'
+		dic[index] = 'A0'
 		for i in range(len(total)):
 			if(total[index] == total[i]):
 				dic[i] = dic[index]
 	elif(index < Bgrade):
-		dic[index] = 'B'
+		dic[index] = 'B0'
 		for i in range(len(total)):
 			if(total[index] == total[i]):
 				dic[i] = dic[index]
 	else:
-		dic[index] = 'C'
+		dic[index] = 'C0'
 		for i in range(len(total)):
 			if(total[index] == total[i]):
 				dic[i] = dic[index]
@@ -58,11 +57,11 @@ Acount=0
 Bcount=0
 Ccount=0
 for index in range(len(total)):
-	if(dic[index] == 'A'):
+	if(dic[index] == 'A0'):
 		Acount+=1
-	if(dic[index] == 'B'):
+	if(dic[index] == 'B0'):
 		Bcount+=1
-	if(dic[index] == 'C'):
+	if(dic[index] == 'C0'):
 		Ccount+=1
 A_count = Acount//2
 B_count = Bcount//2
@@ -85,4 +84,3 @@ for g in range(2,12):
 			ws.cell(row = g, column = 8, value = dic[count])
 	
 wb.save("student.xlsx")
-
