@@ -5,7 +5,6 @@ import math
 wb = Workbook()
 
 ws = wb.active
-ws.append(['id', 'name', 'midtern', 'final' , 'homework', 'attendance', 'total', 'grade'])
 
 row_max = ws.max_row
 
