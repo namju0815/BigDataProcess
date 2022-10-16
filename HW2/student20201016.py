@@ -33,46 +33,50 @@ dic = []
 
 for i in range(len(total)):
 	dic.append('Z')
-
+	
 Agrade = math.trunc(len(total)*0.3)
 Bgrade = math.trunc(len(total)*0.7)
-Cgrade = len(total)-Bgrade
+Cgrade = math.trunc(len(total)-Bgrade)
 
 for index in range(len(total)):
 	if(index < Agrade):
-		if(index < Agrade//2):
-			dic[index] = 'A+'
-			for i in range(len(total)):
-				if(total[index] == total[i]):
-					dic[i] = dic[index]
-		else:
-			dic[index] = 'A'
-			for i in range(len(total)):
-				if(total[index] == total[i]):
-					dic[i] = dic[index]
+		dic[index] = 'A'
+		for i in range(len(total)):
+			if(total[index] == total[i]):
+				dic[i] = dic[index]
 	elif(index < Bgrade):
-		if(index < Agrade+((Bgrade-Agrade)//2)):
-			dic[index] = 'B+'
-			for i in range(len(total)):
-				if(total[index] == total[i]):
-					dic[i] = dic[index]
-		else:
-			dic[index] = 'B'
-			for i in range(len(total)):
-				if(total[index] == total[i]):
-					dic[i] = dic[index]
+		dic[index] = 'B'
+		for i in range(len(total)):
+			if(total[index] == total[i]):
+				dic[i] = dic[index]
 	else:
-		if(index < Bgrade+(Cgrade//2)):
-			dic[index] = 'C+'
-			for i in range(len(total)):
-				if(total[index] == total[i]):
-					dic[i] = dic[index]
-		else:
-			dic[index] = 'C'
-			for i in range(len(total)):
-				if(total[index] == total[i]):
-					dic[i] = dic[index]
+		dic[index] = 'C'
+		for i in range(len(total)):
+			if(total[index] == total[i]):
+				dic[i] = dic[index]
+Acount=0
+Bcount=0
+Ccount=0
+for index in range(len(total)):
+	if(dic[index] == 'A'):
+		Acount+=1
+	if(dic[index] == 'B'):
+		Bcount+=1
+	if(dic[index] == 'C'):
+		Ccount+=1
+A_count = Acount//2
+B_count = Bcount//2
+C_count = Ccount//2
 
+for index in range(0,A_count):
+	dic[index] = 'A+'
+	
+for index in range(Acount,Acount+B_count):
+	dic[index] = 'B+'
+	
+for index in range(Acount+Bcount,Acount+Bcount+C_count):
+	dic[index] = 'C+'
+	
 for g in range(2,12):
 	count = -1
 	for t in total:
