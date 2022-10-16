@@ -7,8 +7,10 @@ wb = Workbook()
 ws = wb.active
 ws.append(['id', 'name', 'midtern', 'final' , 'homework', 'attendance', 'total', 'grade'])
 
+row_max = ws.max_row
+
 total=[]
-for t in range(2,12):
+for t in range(2,row_max+1):
 	#total
 	midtern = ws.cell(row = t, column = 3).value * 0.3
 	final = ws.cell(row = t, column = 4).value * 0.35
@@ -66,7 +68,7 @@ for index in range(Acount,Acount+B_count):
 for index in range(Acount+Bcount,Acount+Bcount+C_count):
 	dic[index] = 'C+'
 	
-for g in range(2,12):
+for g in range(2, row_max+1):
 	count = -1
 	for t in total:
 		count+=1	
