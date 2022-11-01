@@ -2,7 +2,7 @@
 import sys
 from datetime import datetime, date
 inputfile = sys.argv[1]
-outfile = sys.argv[2]
+outputfile = sys.argv[2]
 
 f = open(inputfile,'r')
 def day_week(date):
@@ -10,7 +10,7 @@ def day_week(date):
 	number = date.weekday()
 	return week[number]
 	
-w = open(outfile,'w')
+w = open(outputfile,'w')
 line = f.readline()
 while line:
 	fline = line.split(",")
