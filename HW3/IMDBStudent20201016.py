@@ -4,22 +4,22 @@ inputfile = input()
 outfile = input()
 f = open(inputfile,'r')
 line = f.readline()
-genre={'Animation' : 0, "Children's" : 0, 'Comedy' : 0, 'Adventure' : 0, 'Fantasy' : 0, 'Romance' : 0, 'Drama' : 0, 'Action' : 0, 'Crime' : 0, 'Thriller' : 0, 'Horror' : 0, 'Sci-Fi' : 0, 'Documentary' : 0}
-keylist = list(genre.keys())
+genre = dict()
 
 while line:
 	fline = line.split("::")
 	gline = fline[2].split("|")
 	gline = list(map(lambda s: s.strip(), gline))
 	for i in gline:
-		for k in keylist:
-			if(i == k):
-				genre[k]+=1
+		if i not in genre:
+			genre[i]=1
+		else:
+			genre[i]+=1
 	line = f.readline()
 
+keylist = list(genre.keys())
 valuelist = list(genre.values())
 index = 0
-
 w = open(outfile,'w')
 for i in genre:
 	data = ('{} {}'.format(keylist[index], valuelist[index]))
