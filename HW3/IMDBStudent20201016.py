@@ -17,7 +17,7 @@ while line:
 
 valuelist = list(genre.values())
 index = 0
-while valuelist:
+for i in genre:
 	print('{} {}'.format(keylist[index], valuelist[index]))
 	index+=1
 	
