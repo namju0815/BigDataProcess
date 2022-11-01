@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import sys
-inputfile, outfile = input().split()
+inputfile = input()
+outfile = input()
 
 f = open(inputfile,'r')
 line = f.readline()
@@ -19,6 +19,7 @@ while line:
 
 keylist = list(genre.keys())
 valuelist = list(genre.values())
+
 index = 0
 w = open(outfile,'w')
 for i in genre:
