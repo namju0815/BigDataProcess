@@ -22,9 +22,10 @@ index = 0
 
 w = open(outfile,'w')
 for i in genre:
-	data = ('{} {}'.format(keylist[index], valuelist[index]), end="")
+	data = ('{} {}'.format(keylist[index], valuelist[index]))
 	index+=1
 	w.write(data)
+	w.wrtte('\n')
 	
 w.close()
 f.close()
