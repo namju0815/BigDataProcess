@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 import sys
 from datetime import datetime, date
-inputfile, outfile = input().split()
+inputfile = input()
+outfile = input()
 
 f = open(inputfile,'r')
 def day_week(date):
