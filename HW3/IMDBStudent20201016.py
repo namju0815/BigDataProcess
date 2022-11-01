@@ -25,7 +25,7 @@ for i in genre:
 	data = ('{} {}'.format(keylist[index], valuelist[index]))
 	index+=1
 	w.write(data)
-	w.wrtte('\n')
+	w.write('\n')
 	
 w.close()
 f.close()
