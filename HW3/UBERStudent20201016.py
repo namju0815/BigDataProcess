@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import sys
 from datetime import datetime, date
-inputfile = input()
-outfile = input()
+inputfile, outfile = input().split()
+
 f = open(inputfile,'r')
 def day_week(date):
 	week=['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']

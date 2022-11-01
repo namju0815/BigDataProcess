@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys
-inputfile = input()
-outfile = input()
+inputfile, outfile = input().split()
+
 f = open(inputfile,'r')
 line = f.readline()
 genre = dict()
