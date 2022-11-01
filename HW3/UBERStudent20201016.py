@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import sys
 from datetime import datetime, date
 inputfile = input()
 outfile = input()
