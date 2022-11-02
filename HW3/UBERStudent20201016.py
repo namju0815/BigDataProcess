@@ -16,7 +16,7 @@ with open(inputfile, "r") as fp:
 		region = uberlist[0]
 		day = uberlist[1].split("/") 
 		uberlist[1] = day_week(int(day[2]), int(day[0]), int(day[1]))
-		key = region + "," + uber[1]
+		key = region + "," + uberlist[1]
 		vehicle = int(uberlist[2])
 		trip = int(uberlist[3])
 		if key in udic:
