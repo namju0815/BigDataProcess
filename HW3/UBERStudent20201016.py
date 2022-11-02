@@ -4,14 +4,14 @@ import datetime
 
 def day_week(y,m,d):
 	dayList = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
-	return dayList[datetime.date(y,m,d).weekday()
+	return dayList[datetime.date(y,m,d).weekday()]
 inputfile = sys.argv[1]
 outputfile = sys.argv[2]
 
 udic = dict()
 day = []
-f = open(inputfile, "r")
-	for line in f:
+with open(inputfile, "r") as fp:
+	for line in fp:
 		uberlist = line.split(",")
 		region = uberlist[0]
 		day = uberlist[1].split("/") 
@@ -29,4 +29,3 @@ with open(outputfile, "w") as fp:
 	for i in udic.items():
 		fp.write("%s %s\n" %(i[0], i[1]))
 
-f.close()
