@@ -1,39 +1,32 @@
 #!/usr/bin/python3
 import sys
-from datetime import datetime, date
+import datetime
+
+def day_week(y,m,d):
+	dayList = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
+	return dayList[datetime.date(y,m,d).weekday()
 inputfile = sys.argv[1]
 outputfile = sys.argv[2]
 
-f = open(inputfile,'r')
-def day_week(date):
-	weekday=['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
-	number = date.weekday()
-	return weekday[number]
-	
-w = open(outputfile,'w')
-line = f.readline()
+udic = dict()
+day = []
+f = open(inputfile, "r")
+	for line in f:
+		uberlist = line.split(",")
+		region = uberlist[0]
+		day = uberlist[1].split("/") 
+		uberlist[1] = day_week(int(day[2]), int(day[0]), int(day[1]))
+		key = region + "," + uber[1]
+		vehicle = int(uberlist[2])
+		trip = int(uberlist[3])
+		if key in udic:
+			value = udic[key].split(",")
+			vehicle += int(value[0])
+			trip += int(value[1])
+		udic[key] = str(vehicle) + "," + str(trip)
 
-number = dict()
-llist=[]
-while line:
-	fline = line.split(",")
-	fline = list(map(lambda s: s.strip(), fline))
-	i = fline[0]
-	if i not in number:
-		number[i]=1
-	else:
-		number[i]+=1
-		
-	wline = fline[1].split("/")
-	wline = list(map(lambda s: s.strip(), wline))
-	day = day_week(date(int(wline[2]), int(wline[0]), int(wline[1])))
-	llist.append([fline[0], day, fline[2], fline[3]])
-	line = f.readline()
+with open(outputfile, "w") as fp:
+	for i in udic.items():
+		fp.write("%s %s\n" %(i[0], i[1]))
 
-llist.sort()
-for i in llist:
-	data = ('{},{} {},{}'.format(i[0],i[1],i[2],i[3]))
-	w.write(data)
-	w.write('\n')	
-w.close()
 f.close()
